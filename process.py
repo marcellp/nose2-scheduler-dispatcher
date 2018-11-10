@@ -1,4 +1,4 @@
-from enum import Enum, auto
+from enum import Enum
 import logging
 import math
 import numbers
@@ -14,10 +14,10 @@ scheduler to assign the CPU to it again. Finally, the process transitions to the
 when it has no more work to do.
 """
 class ProcessStates(Enum):
-        NEW = auto()
-        READY = auto()
-        RUNNING = auto()
-        TERMINATED = auto()
+        NEW = 0
+        READY = 1
+        RUNNING = 2
+        TERMINATED = 3
 
 """ Class that encodes all info related to a process
 

@@ -1,4 +1,4 @@
-from enum import Enum, auto
+from enum import Enum
 import numbers
 
 """ Enumeration of possible event types
@@ -9,9 +9,9 @@ Values include:
 - PROC_CPU_DONE: Denotes when a process needs no more CPU time and is thus terminated
 """
 class EventTypes(Enum):
-        PROC_ARRIVES = auto()
-        PROC_CPU_REQ = auto()
-        PROC_CPU_DONE = auto()
+        PROC_ARRIVES = 0
+        PROC_CPU_REQ = 1
+        PROC_CPU_DONE = 2
         
 """ Encapsulates all necessary info for our events, to be used in queues
 
