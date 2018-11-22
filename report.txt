@@ -1,0 +1,38 @@
+NOSE2 2nd assessed exercise report
+Marcell Pek: 2333134p
+Myles Lamb: 2325727l
+Discussion of interesting seed values:
+
+1797410758: The first 5 of 10 processes arrive within 2 units of time, however the 3rd process required 8.5 units of CPU time, while the latter processes arrived more sporadically. That is within a unit of time between each other.
+This subsequently resulted in the FCFS algorithm performing particularly poorly in respect to turnaround time as well as waiting time. ~10.206, ~8.103 respectively. This is due to the algorithm prioritising processes that arrive first over others and hence all processes that arrived after are forced to wait until the longer process had finished.
+SJF suffers in a similar sense as it lacks the ability to pre-empt a process, as the CPU is idle before the process of 8.5 units of time arrives, in a similar sense to FCFS runs the longer process to completion in a single burst. Causing all the subsequent process that arrive to wait until this process finishes driving up the waiting time and turnaround times.
+RR robin performs somewhat well regarding wait times as it guarantees each process in the queue a time slice, and as the smaller processes are approximately equal to the quantum, the smaller processes are not forced to wait as long. Experiencing diminishing returns as we increase the quantum as it begins to operate akin to FCFS.
+SRTF performs the best out of all the scheduling algorithms, this is primarily due to its ability to pre-empt more demanding processes in order to prioritise shorter processes, that is that the longer process is not completed until the very end.
+
+
+
+
+
+
+
+
+2688744162: 
+processes are generally of a consistent size of between 1 and 2 time units, with the exception of the 5th process being 4.35 time units, processes arrive in 3 distinct blocks of within 1 unit of time, the first consisting of the first 2 processes the 2nd containing the 3rd to the 9th and the last process arriving a time unit after the penultimate.
+RR performs the worst here, this is due to the fact although the processes arrived in distinct blocks RR is invariant as subsequent processes arrive prior to RR traversing the ready queue, coupled with the fact that all processes are greater than the default quantum, hence each process requires a minimum of two passes to complete resulting in much larger waiting and turnaround times. Again increasing the quantum typically improves the performance towards FCFS and no more
+FCFS performs fairly poorly, this is caused by the 5th process being significantly larger than any of other processes and arriving fairly early, preventing any subsequent processes to execute on the CPU until the larger process is done.
+SJF performs fairly well. As the processes arrive in distinct blocks the scheduler has the ability to select the the shortest processes from the blocks in all but the first, this helps decrease wait times as shorter processes no longer have to wait
+SRTF: performs the best due to its ability to pre-empt processes so that it can consistently choose the shortest process to completion at any time, hence a slight decrease to turnaround time and waiting times.
+
+
+3399474557: 
+All processes arrive within 2 units of time, the 1st and the 3rd process requiring ~4.483 and ~7.667 respectively, the remaining processes being between ~0.3 and ~2.0. 
+Again FCFS performs the worst, due to the fact that some of the early arriving processes having longer service times, causing the ready queue to stagnate while the longer processes to finish driving up waiting and turnaround times.
+RR performs slightly better than the FCFS algorithm, this is due to the fact that some of the processes are in fact smaller than the quantum, hence, in one traversal of the ready queue they can be executed to completion whilst otherwise would be waiting as in the FCFS algorithm, as less processes are waiting after the first traversal of the ready queue, this decreases the wating and turnaround times.
+SJF performs fairly well due to quick succession that processes arrive, however the first process requiring significantly more time on the CPU hinders the algorithms performance as subsequent processes are forced to wait until the larger process has finished
+SRTF performs the best as it can consistently prioritise the shortest process as it is able to pre-empt the initial longer process in order to execute shorter processes hence its much smaller wait time than its contemporaries. 
+	
+Hardships/solutions to hardships:
+
+
+
+
